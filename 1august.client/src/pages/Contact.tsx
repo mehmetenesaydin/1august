@@ -1,10 +1,11 @@
-import React from 'react';
+﻿import React from 'react';
+import '../App.css'; // CSS dosyasını import et
 
 const Contact: React.FC = () => {
     return (
-        <div>
+        <div className="contact-container">
             <h1>Contact Us</h1>
-            <p>Feel free to reach out to us through the contact form blelow or via email.</p>
+            <p>Feel free to reach out to us through the contact form below or via email.</p>
             <form>
                 <label htmlFor="name">Name: </label>
                 <input type="text" id="name" name="name" />
@@ -19,4 +20,3 @@ const Contact: React.FC = () => {
 };
 
 export default Contact;
-     

@@ -1,9 +1,9 @@
-// src/pages/Home.tsx
-import React from 'react';
+﻿import React from 'react';
+import '../App.css'; // CSS dosyasını import et
 
 const Home: React.FC = () => {
     return (
-        <div>
+        <div className="home-container">
             <h1>Home Page</h1>
             <p>Welcome to the Home page!</p>
         </div>
