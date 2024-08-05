@@ -1,11 +1,11 @@
-﻿// src/App.tsx
-import React from 'react';
+﻿import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
+import DownloadContract from './pages/DownloadContract'; // Yeni sayfa importu
 
 const App: React.FC = () => {
     return (
@@ -17,6 +17,7 @@ const App: React.FC = () => {
                     <li><Link to="/services">Services</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
                     <li><Link to="/faq">FAQ</Link></li>
+                    <li><Link to="/download-contract">Download Contract</Link></li> {/* Yeni bağlantı */}
                 </ul>
             </nav>
             <Routes>
@@ -25,6 +26,7 @@ const App: React.FC = () => {
                 <Route path="/services" element={<Services />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/faq" element={<FAQ />} />
+                <Route path="/download-contract" element={<DownloadContract />} /> {/* Yeni route */}
             </Routes>
         </Router>
     );
