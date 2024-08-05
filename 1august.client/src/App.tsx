@@ -5,6 +5,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
+import DownloadContract from './pages/DownloadContract'; // Yeni sayfa importu
 import jlogo from './assets/jlogo.png';
 
 const App: React.FC = () => {
@@ -18,6 +19,7 @@ const App: React.FC = () => {
                     <li><Link to="/services">Sözleşme Seçenekleri</Link></li>
                     <li><Link to="/contact">İletişim</Link></li>
                     <li><Link to="/faq">FAQ</Link></li>
+                    <li><Link to="/download-contract">Download Contract</Link></li> {/* Yeni bağlantı */}
                 </ul>
             </nav>
             <Routes>
@@ -26,6 +28,7 @@ const App: React.FC = () => {
                 <Route path="/services" element={<Services />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/faq" element={<FAQ />} />
+                <Route path="/download-contract" element={<DownloadContract />} /> {/* Yeni route */}
             </Routes>
         </Router>
     );
