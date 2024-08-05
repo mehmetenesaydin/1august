@@ -14,17 +14,22 @@ body {
 
 /* Navigasyon Stili */
 nav {
-    background-color: #007bff;
-    padding: 10px 0;
+    background-color: purple;
+    padding: 20px 0;
     color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
+
+ 
 
     nav ul {
         list-style: none;
         padding: 0;
         margin: 0;
         display: flex;
-        justify-content: center;
+        justify-content: right;
     }
 
     nav li {

@@ -1,21 +1,22 @@
-﻿// src/App.tsx
-import React from 'react';
+﻿import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
+import jlogo from './assets/jlogo.png';
 
 const App: React.FC = () => {
     return (
         <Router>
             <nav>
+                <img src={jlogo} alt="Logo" style={{ height: '40px', marginRight: '1000px' }} />
                 <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/services">Services</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
+                    <li><Link to="/">Anasayfa</Link></li>
+                    <li><Link to="/about">Hakkımızda</Link></li>
+                    <li><Link to="/services">Sözleşme Seçenekleri</Link></li>
+                    <li><Link to="/contact">İletişim</Link></li>
                     <li><Link to="/faq">FAQ</Link></li>
                 </ul>
             </nav>
