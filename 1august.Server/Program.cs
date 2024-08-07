@@ -1,35 +1,30 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.EntityFrameworkCore;
+﻿var builder = WebApplication.CreateBuilder(args);
 
-var builder = WebApplication.CreateBuilder(args);
+// Add services to the container.
 
-// Veritabanı bağlantı dizesini almak
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-
-// DbContext'i yapılandırma
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
-
-// Diğer servisler
 builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Hata ayıklama sayfası
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
+// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseDeveloperExceptionPage();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
-// Middleware'lar
-app.UseRouting();
+app.UseHttpsRedirection();
+
 app.UseAuthorization();
 
-// API yolları
 app.MapControllers();
+
+app.MapFallbackToFile("/index.html");
 
 app.Run();
