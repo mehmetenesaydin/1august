@@ -15,7 +15,8 @@ const About: React.FC = () => {
                 çözümler sunma konusunda uzmanlaşmıştır. Operasyonlarınızı optimize etmek, veri analizlerinizi ve raporlamanızı
                 geliştirmek veya iş akışınızı kolaylaştırmak istiyorsanız, başarılı olmanıza yardımcı olacak uzmanlığa ve kaynaklara sahibiz.
                 JL Management and Industrial Systems Ltd olarak taahhüdümüz mükemmelliğe yöneliktir ve dijital dönüşüm hedeflerine ulaşmalarına
-                yardımcı olmak için dünya çapındaki işletmelerle ortaklık yapmaktan gurur duyuyoruz.</p>
+                yardımcı olmak için dünya çapındaki işletmelerle ortaklık yapmaktan gurur duyuyoruz.
+            </p>
         </div>
     );
 };
