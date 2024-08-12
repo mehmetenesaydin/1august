@@ -8,7 +8,7 @@ namespace _1august.Server.Controllers
     public class ContractController : Controller
     {
         [HttpPost]
-        public async Task<IActionResult> OnlinePlatformServiceAgreement()//(OnlinePlatformServiceAgreementModel model)
+        public async Task<IActionResult> OnlinePlatformServiceAgreement(OnlinePlatformServiceAgreementModel model)
         {
 
             string sozlesmemetni = @"B2B Online Platform Hizmet Sözleşmesi
@@ -133,28 +133,28 @@ Taraflar:
             string rndDeneme = rnd.Next(0, 999999).ToString();
 
             sozlesmemetni = sozlesmemetni.Replace("«Contract_No»", rndDeneme);
-            //sozlesmemetni = sozlesmemetni.Replace("«Effective_Date»", model.Effective_Date.ToShortDateString().ToString());
-            //sozlesmemetni = sozlesmemetni.Replace("«Platform_Sahibi_Şirket_Adı»", model.Platform_Sahibi_Sirket_Adi);
-            //sozlesmemetni = sozlesmemetni.Replace("«Vergi_Numarası_A»", model.Vergi_Numarasi_A);
-            //sozlesmemetni = sozlesmemetni.Replace("«Yurt_Dışı_İş_Ortağı_Şirket_Adı»", model.Yurt_Disi_Is_Ortagi_Sirket_Adi);
-            //sozlesmemetni = sozlesmemetni.Replace("«Company_A_Address_»", model.Company_A_Address_);
-            //sozlesmemetni = sozlesmemetni.Replace("«Country_A»", model.Country_A);
-            //sozlesmemetni = sozlesmemetni.Replace("«Country_B»", model.Country_B);
-            //sozlesmemetni = sozlesmemetni.Replace("«Company_B_Address_»", model.Company_B_Adress_);
-            //sozlesmemetni = sozlesmemetni.Replace("«Company_B_Address_»", model.Country_B);
-            //sozlesmemetni = sozlesmemetni.Replace("«Vergi_Numarası_B»", model.Vergi_Numarasi_B);
-            //sozlesmemetni = sozlesmemetni.Replace("«Ödeme_Sıklığı_»", model.Odeme_Sikligi.ToString());
-            //sozlesmemetni = sozlesmemetni.Replace("«Bildirim_Süresi_»", model.Bildirim_Suresi.ToString());
-            //sozlesmemetni = sozlesmemetni.Replace("«Bildirim_Şekli_» ", model.Bildirim_Sekli.ToString());
-            //sozlesmemetni = sozlesmemetni.Replace("«Fesih_Ödeme_Süresi»", model.Fesih_Odeme_Suresi.ToString());
-            //sozlesmemetni = sozlesmemetni.Replace("«Ödeme_Şekli_»", model.Odeme_Sekli_.ToString());
-            //sozlesmemetni = sozlesmemetni.Replace("«Mahkeme»", model.Mahkeme.ToString());
-            //sozlesmemetni = sozlesmemetni.Replace("«Platform_Yetkili_Adı_»", model.Platform_Yetkili_Adi.ToString());
-            //sozlesmemetni = sozlesmemetni.Replace("«PL_Yetkili_Ünvanı_»", model.PL_Yetkili_Unvani_);
-            //sozlesmemetni = sozlesmemetni.Replace("«YD_Yetkili_Adı_»", model.YD_Yetkili_Adi_);
+            sozlesmemetni = sozlesmemetni.Replace("«Effective_Date»", model.Effective_Date.ToShortDateString().ToString());
+            sozlesmemetni = sozlesmemetni.Replace("«Platform_Sahibi_Şirket_Adı»", model.Platform_Sahibi_Sirket_Adi);
+            sozlesmemetni = sozlesmemetni.Replace("«Vergi_Numarası_A»", model.Vergi_Numarasi_A);
+            sozlesmemetni = sozlesmemetni.Replace("«Yurt_Dışı_İş_Ortağı_Şirket_Adı»", model.Yurt_Disi_Is_Ortagi_Sirket_Adi);
+            sozlesmemetni = sozlesmemetni.Replace("«Company_A_Address_»", model.Company_A_Address_);
+            sozlesmemetni = sozlesmemetni.Replace("«Country_A»", model.Country_A);
+            sozlesmemetni = sozlesmemetni.Replace("«Country_B»", model.Country_B);
+            sozlesmemetni = sozlesmemetni.Replace("«Company_B_Address_»", model.Company_B_Adress_);
+            sozlesmemetni = sozlesmemetni.Replace("«Company_B_Address_»", model.Country_B);
+            sozlesmemetni = sozlesmemetni.Replace("«Vergi_Numarası_B»", model.Vergi_Numarasi_B);
+            sozlesmemetni = sozlesmemetni.Replace("«Ödeme_Sıklığı_»", model.Odeme_Sikligi.ToString());
+            sozlesmemetni = sozlesmemetni.Replace("«Bildirim_Süresi_»", model.Bildirim_Suresi.ToString());
+            sozlesmemetni = sozlesmemetni.Replace("«Bildirim_Şekli_» ", model.Bildirim_Sekli.ToString());
+            sozlesmemetni = sozlesmemetni.Replace("«Fesih_Ödeme_Süresi»", model.Fesih_Odeme_Suresi.ToString());
+            sozlesmemetni = sozlesmemetni.Replace("«Ödeme_Şekli_»", model.Odeme_Sekli_.ToString());
+            sozlesmemetni = sozlesmemetni.Replace("«Mahkeme»", model.Mahkeme.ToString());
+            sozlesmemetni = sozlesmemetni.Replace("«Platform_Yetkili_Adı_»", model.Platform_Yetkili_Adi.ToString());
+            sozlesmemetni = sozlesmemetni.Replace("«PL_Yetkili_Ünvanı_»", model.PL_Yetkili_Unvani_);
+            sozlesmemetni = sozlesmemetni.Replace("«YD_Yetkili_Adı_»", model.YD_Yetkili_Adi_);
 
-            //sozlesmemetni = sozlesmemetni.Replace("«YD_Yetkili_Ünvanı»", model.YD_Yetkili_Unvani);
-            //sozlesmemetni = sozlesmemetni.Replace("«Brief_Description_of_Collaboration»", model.Brief_Description_of_Collaboration);
+            sozlesmemetni = sozlesmemetni.Replace("«YD_Yetkili_Ünvanı»", model.YD_Yetkili_Unvani);
+            sozlesmemetni = sozlesmemetni.Replace("«Brief_Description_of_Collaboration»", model.Brief_Description_of_Collaboration);
 
 
             PdfController pdfc = new PdfController();
