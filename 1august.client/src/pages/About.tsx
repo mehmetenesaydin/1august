@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import '../App.css'; // CSS dosyasını import et
+import '../cssfiles/About.css'; // CSS dosyasını import et
 
 const About: React.FC = () => {
     return (

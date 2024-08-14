@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import '../App.css'; // CSS dosyasını import et
+import '../cssfiles/FAQ.css'; // CSS dosyasını import et
 
 const FAQ: React.FC = () => {
     return (
