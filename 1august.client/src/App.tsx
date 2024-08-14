@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
-import FAQ from './pages/FAQ';
+import FAQ from './pages/SSS';
 import DownloadContract from './pages/DownloadContract'; // Yeni sayfa importu
 import jlogo from './assets/jlogo.png';
 

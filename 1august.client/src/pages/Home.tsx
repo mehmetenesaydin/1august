@@ -1,8 +1,9 @@
 ﻿
-import React from 'react';
+
 import '../App.css'; // CSS dosyasını import et
 
 const Home: React.FC = () => {
+   
     return (
         <div className="home-container">
             <h1>Sözleşme Otomasyonuna Hoşgeldiniz</h1>
