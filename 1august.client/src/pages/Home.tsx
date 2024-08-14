@@ -1,6 +1,6 @@
 ﻿
-
-import '../App.css'; // CSS dosyasını import et
+import React from 'react';
+import '../cssfiles/Home.css' // CSS dosyasını import et
 
 const Home: React.FC = () => {
    

@@ -1,0 +1,26 @@
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+    .faq-container h1 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .faq-container .faq-item {
+        margin-bottom: 20px;
+    }
+
+        .faq-container .faq-item h2 {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .faq-container .faq-item p {
+            font-size: 1rem;
+            color: #444;
+        }

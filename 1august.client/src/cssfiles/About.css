@@ -1,0 +1,19 @@
+﻿.about-container {
+    margin-bottom: 40px;
+    max-width: 600px;
+    padding: 20px;
+    text-align: left; /* Yazıyı sola hizalar */
+}
+
+    .about-container h1 {
+        font-size: 2rem;
+        color: #333;
+        text-align: center;
+        /* Başlık etrafında ekstra boşluk olmasın */
+    }
+
+    .about-container p {
+        font-size: 1rem;
+        color: #333;
+        margin: 0; /* Paragraf etrafında ekstra boşluk olmasın */
+    }
