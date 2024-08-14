@@ -18,7 +18,7 @@ const App: React.FC = () => {
                     <li><Link to="/about">Hakkımızda</Link></li>
                     <li><Link to="/services">Sözleşme Seçenekleri</Link></li>
                     <li><Link to="/contact">İletişim</Link></li>
-                    <li><Link to="/faq">FAQ</Link></li>
+                    <li><Link to="/faq">SSS</Link></li>
                     <li><Link to="/download-contract">Download Contract</Link></li> {/* Yeni bağlantı */}
                 </ul>
             </nav>
