@@ -1,5 +1,6 @@
 ﻿import React, { useState } from 'react';
 import { getContractPdf } from '../Api.ts'; // API çağrısı için oluşturduğunuz fonksiyon
+import '../cssfiles/DownloadContract.css';
 
 const DownloadContract: React.FC = () => {
     const [formData, setFormData] = useState({

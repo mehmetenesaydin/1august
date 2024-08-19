@@ -7,6 +7,9 @@ import Contact from './pages/Contact';
 import FAQ from './pages/SSS';
 import DownloadContract from './pages/DownloadContract'; // Yeni sayfa importu
 import jlogo from './assets/jlogo.png';
+import Login from './pages/Login'; 
+import Register from './pages/Register';
+
 
 const App: React.FC = () => {
     return (
@@ -20,6 +23,8 @@ const App: React.FC = () => {
                     <li><Link to="/contact">İletişim</Link></li>
                     <li><Link to="/faq">SSS</Link></li>
                     <li><Link to="/download-contract">Download Contract</Link></li> {/* Yeni bağlantı */}
+                    <li><Link to="/login">Giriş Yap</Link></li>
+                    <li><Link to="/register">Kayıt Ol</Link></li>
                 </ul>
             </nav>
             <Routes>
@@ -29,6 +34,9 @@ const App: React.FC = () => {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/faq" element={<FAQ />} />
                 <Route path="/download-contract" element={<DownloadContract />} /> {/* Yeni route */}
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+
             </Routes>
         </Router>
     );
