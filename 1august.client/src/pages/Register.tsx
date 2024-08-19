@@ -61,6 +61,16 @@ const Signup: React.FC = () => {
                         required
                     />
                 </div>
+                <div className="input-group">
+                    <label>Confirm Password</label>
+                    <input
+                        type="password"
+                        name="confirmPassword"
+                        value={formData.confirmPassword}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
                 <button type="submit">Sign Up</button>
             </form>
         </div>
