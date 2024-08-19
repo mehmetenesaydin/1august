@@ -1,4 +1,5 @@
 ﻿import React, { useState } from 'react';
+import axios from 'axios'; // axios'u dahil edin
 import '../cssfiles/Register.css'; // CSS dosyasını dahil edin
 
 const Signup: React.FC = () => {
@@ -17,14 +18,28 @@ const Signup: React.FC = () => {
         }));
     };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (formData.password !== formData.confirmPassword) {
             alert("Passwords do not match!");
             return;
         }
-        // Kayıt işlemleri burada gerçekleştirilebilir.
-        console.log('Form Data:', formData);
+
+        try {
+            const response = await axios.post('/api/register', {
+                username: formData.username,
+                email: formData.email,
+                password: formData.password
+            });
+
+            if (response.status === 200) {
+                console.log('Registration successful:', response.data);
+                alert('Registration successful!');
+            }
+        } catch (error) {
+            console.error('Registration failed:', error);
+            alert('Registration failed. Please try again.');
+        }
     };
 
     return (
