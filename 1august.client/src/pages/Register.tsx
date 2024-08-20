@@ -2,11 +2,14 @@
 import axios from 'axios'; // axios'u dahil edin
 import '../cssfiles/Register.css'; // CSS dosyasını dahil edin
 
+// API URL'inizi burada tanımlayın
+const API_URL = 'https://localhost:44335/api'; // API'nin temel URL'i
+
 const Signup: React.FC = () => {
     const [formData, setFormData] = useState({
-        username: '',
-        email: '',
-        password: '',
+        Username: '',
+        Email: '',
+        Password: '',
         confirmPassword: ''
     });
 
@@ -20,16 +23,17 @@ const Signup: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (formData.password !== formData.confirmPassword) {
+        if (formData.Password !== formData.confirmPassword) {
             alert("Passwords do not match!");
             return;
         }
 
         try {
-            const response = await axios.post('/api/register', {
-                username: formData.username,
-                email: formData.email,
-                password: formData.password
+            // API URL'yi buraya ekleyin
+            const response = await axios.post(`${API_URL}/auth/register`, {
+                Username: formData.Username,
+                Email: formData.Email,
+                Password: formData.Password
             });
 
             if (response.status === 200) {
@@ -50,8 +54,8 @@ const Signup: React.FC = () => {
                     <label>Username</label>
                     <input
                         type="text"
-                        name="username"
-                        value={formData.username}
+                        name="Username"
+                        value={formData.Username}
                         onChange={handleChange}
                         required
                     />
@@ -60,8 +64,8 @@ const Signup: React.FC = () => {
                     <label>Email</label>
                     <input
                         type="email"
-                        name="email"
-                        value={formData.email}
+                        name="Email"
+                        value={formData.Email}
                         onChange={handleChange}
                         required
                     />
@@ -70,8 +74,8 @@ const Signup: React.FC = () => {
                     <label>Password</label>
                     <input
                         type="password"
-                        name="password"
-                        value={formData.password}
+                        name="Password"
+                        value={formData.Password}
                         onChange={handleChange}
                         required
                     />

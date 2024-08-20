@@ -10,29 +10,28 @@ using System.Text;
 
 namespace _1august.Server.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[Controller]/[Action]")]
     public class AuthController : ControllerBase
     {
         private readonly YourDbContext _context;
-        private readonly IPasswordHasher<User> _passwordHasher;
 
-        public AuthController(YourDbContext context, IPasswordHasher<User> passwordHasher)
+        public AuthController(YourDbContext context)
         {
             _context = context;
-            _passwordHasher = passwordHasher;
         }
 
-        [HttpPost("register")]
+        [HttpPost]
         public async Task<IActionResult> Register(UserRegisterModel model)
         {
             var user = new User
             {
                 Username = model.Username,
-                Email = model.Email
+                Email = model.Email,
+                PasswordHash = model.Password
             };
 
-            user.PasswordHash = _passwordHasher.HashPassword(user, model.Password);
+            //user.PasswordHash = _passwordHasher.HashPassword(user, model.Password);
 
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
@@ -40,12 +39,17 @@ namespace _1august.Server.Controllers
             return Ok(new { message = "User registered successfully" });
         }
 
-        [HttpPost("login")]
+        [HttpPost]
         public async Task<IActionResult> Login(UserLoginModel model)
         {
             var user = await _context.Users.SingleOrDefaultAsync(u => u.Username == model.Username);
 
-            if (user == null || _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, model.Password) != PasswordVerificationResult.Success)
+            //if (user == null || _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, model.Password) != PasswordVerificationResult.Success)
+            //{
+            //    return Unauthorized();
+            //}
+
+            if (user == null)
             {
                 return Unauthorized();
             }
