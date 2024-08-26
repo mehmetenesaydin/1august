@@ -33,10 +33,17 @@ namespace _1august.Server.Controllers
 
             //user.PasswordHash = _passwordHasher.HashPassword(user, model.Password);
 
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
+            try
+            {
+                _context.Users.Add(user);
+                await _context.SaveChangesAsync();
 
-            return Ok(new { message = "User registered successfully" });
+                return Ok(new { message = "User registered successfully" });
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { message = "User registered error" });
+            }
         }
 
         [HttpPost]
